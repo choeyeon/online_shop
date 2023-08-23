@@ -32,7 +32,7 @@ class Review(models.Model):
 
     text = models.TextField()
     raiting = models.IntegerField(null=True, choices=RATING_CHOICES)
-    goods = models.ForeignKey(Goods, on_delete=models.CASCADE)
+    goods = models.ForeignKey('Goods', on_delete=models.CASCADE, null=False)
     likes = models.PositiveIntegerField(default=0)
     dislikes = models.PositiveIntegerField(default=0)
     score = models.FloatField(null=True)
@@ -43,7 +43,7 @@ class Review(models.Model):
         rating = self.rating or 1
         self.score = (likes_count / dislikes_count) * (1 / rating)
 
-
+#TODO update or delete this
 class ReviewLike(models.Model):
     rewiew = models.ForeignKey(Review, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

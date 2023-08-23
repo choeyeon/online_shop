@@ -21,6 +21,7 @@ from evapp.views import *
 
 router = SimpleRouter()
 router.register(r'goods', GoodsViewSet)
+router.register('review', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

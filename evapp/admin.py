@@ -11,3 +11,8 @@ class GoodsAdmin(ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(ModelAdmin):
     pass
+
+
+@admin.register(Review)
+class ReviewAdmin(ModelAdmin):
+    pass
